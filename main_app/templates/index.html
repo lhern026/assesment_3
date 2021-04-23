@@ -11,6 +11,11 @@
 </head>
 <body>
     <h1>Wish list items</h1>
+    {% if items|length == 0%}
+        <h3>no wish items exist</h3>
+        <hr>
+        {% endif%}
+
     
 </body>
 </html>
