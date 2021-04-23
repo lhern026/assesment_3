@@ -14,14 +14,33 @@
     {% if items|length == 0%}
         <h3>no wish items exist</h3>
         <hr>
-    {% else %}
-        <ul>
-            {% for item in items%}
-                <li>{{item.description}}</li>
-                {% endfor %}
-        </ul>
-        {% endif%}
         <a href="{%url 'add_item' %}" class="pure-button">add a wish item</a>
+
+    {% else %}
+        <table class="pure-table-striped" class='pure-table'>
+            <thead>
+                <tr>
+                    <th>description</th>
+                    <th>delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items%}
+                    <tr>
+                        <td>{{item.description}}</td>
+                        <td>
+                            <a href="{% url 'delete_item' item.id %}">x</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+            </tbody>
+        </table>
+        <hr>
+       
+        {% endif%}
+        
 
     
 </body>

@@ -12,12 +12,13 @@
 <body>
     <h1>Wish list items</h1>
     <hr>
-    <form action="" method="POST" class="pure-form"></form>
+    <form action="" method="POST" class="pure-form">
         {% csrf_token%}
         <table>
             {{form.as_table}}
         </table>
         <input type="submit" class="pure-button" value="additem">
+    </form>
     
 </body>
 </html>
